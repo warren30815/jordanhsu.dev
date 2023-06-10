@@ -1,5 +1,5 @@
 ---
-title: "Gpt3 — 耗資1200萬美元訓練的通用nlp模型的商業價值"
+title: "Gpt3 — 耗資1200萬美元訓練的通用NLP模型的商業價值"
 datePublished: Wed Sep 16 2020 02:12:45 GMT+0000 (Coordinated Universal Time)
 cuid: clifong7g04lsyhnv6wg4dqv6
 slug: gpt3
