@@ -1,38 +1,32 @@
 ---
-title: "ICLR2020 — Graph Attention Networks（GAT）的擴展"
+title: "Adaptive Structural Fingerprints for Graph Attention Networks"
 datePublished: Mon Mar 30 2020 08:30:38 GMT+0000 (Coordinated Universal Time)
 cuid: clifostpo04nyyhnv489ufte9
-slug: iclr2020-graph-attention-networks-gat-e79a84e693b4e5b195-3027293d82da
+slug: adaptive-structural-fingerprints-for-graph-attention-networks
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685778174060/a9c8c36a-abf8-4f0e-860d-232313d40d8a.png
+tags: ai, graph
 
 ---
-
-#### Adaptive Structural Fingerprints for Graph Attention Networks
 
 paper link: [https://openreview.net/pdf?id=BJxWx0NYPr](https://openreview.net/pdf?id=BJxWx0NYPr)
 
 Published as a poster in ICLR 2020
 
-**如不知道GAT是什麼的，建議先看看這篇的前景提要部分**
-
-[**探討graph attention機制有效性 — Understanding Attention and Generalization in Graph Neural Networks**  
-*paper link: https://arxiv.org/abs/1905.02850*medium.com](https://medium.com/@qaz7821819/%E6%8E%A2%E8%A8%8Egraph-attention%E6%A9%9F%E5%88%B6%E6%9C%89%E6%95%88%E6%80%A7-understanding-attention-and-generalization-in-graph-neural-networks-d1ad54084bc0 "https://medium.com/@qaz7821819/%E6%8E%A2%E8%A8%8Egraph-attention%E6%A9%9F%E5%88%B6%E6%9C%89%E6%95%88%E6%80%A7-understanding-attention-and-generalization-in-graph-neural-networks-d1ad54084bc0")[](https://medium.com/@qaz7821819/%E6%8E%A2%E8%A8%8Egraph-attention%E6%A9%9F%E5%88%B6%E6%9C%89%E6%95%88%E6%80%A7-understanding-attention-and-generalization-in-graph-neural-networks-d1ad54084bc0)
-
 > 一言以敝之，這篇提出一種同時考慮到node feature和結構feature的方法來計算attention score，且不侷限在只能聚合1-hop鄰居
 
 先看結果
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778146640/46864b02-5da7-478e-a9ca-9a4436e84deb.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778146640/46864b02-5da7-478e-a9ca-9a4436e84deb.png align="left")
 
 在三個transductive任務（transductive不知道是什麼的話見下圖最下面）中，均展現了不錯的提升，經由ablation實驗證實歸因於加入的結構資訊
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778148808/a4ab47c8-b0d5-4cd7-8899-6c069917864c.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778148808/a4ab47c8-b0d5-4cd7-8899-6c069917864c.png align="left")
 
 transductive的目的是最佳化手上擁有的全部data的預測結果，因此對於預測完全沒看過的data效果通常很差
 
 在看ablation實驗的結果之前，我們先來看看GAT如果將更高hop的鄰居資訊量也考慮進去的結果會如何
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778150709/5e41d4dd-a720-4082-b44b-f595fe261c56.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778150709/5e41d4dd-a720-4082-b44b-f595fe261c56.png align="left")
 
 可以看到，將更高hop的鄰居一起考慮對GAT有害無益（即GNN的over-smoothing問題）
 
@@ -40,7 +34,7 @@ transductive的目的是最佳化手上擁有的全部data的預測結果，因�
 
 **那這篇會不會也有一樣的問題呢？**
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778153123/197be511-1049-4022-a40a-78dca4b8d60a.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778153123/197be511-1049-4022-a40a-78dca4b8d60a.png align="left")
 
 本篇的實驗結果說明了同時考慮content和結構資訊（比重為train出來的）在2-hop時能提升效果
 
@@ -62,7 +56,7 @@ transductive的目的是最佳化手上擁有的全部data的預測結果，因�
 
 在如下圖case中GAT無法為node A、B計算attention score（因為沒有direct connection），但node A、B都strongly connected到這個dense community，B甚至還直接connect這個community的hub（藍色中心點那個），所以node A、B之間也應該要或多或少影響彼此:
 
-![](https://cdn-images-1.medium.com/max/800/1*lVMCbPz7W-SMv85fI5zPbg.png)
+![](https://cdn-images-1.medium.com/max/800/1*lVMCbPz7W-SMv85fI5zPbg.png align="left")
 
 GAT並不會有node A、B之間的attention score
 
@@ -76,7 +70,7 @@ GAT並不會有node A、B之間的attention score
 
 結構指紋其實就是k-hop subgraph的概念而已，看接下來的圖會更有感為什麼作者稱closeness分佈為“指紋”
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778157885/e470b7bb-2f7b-4947-857b-e01f81c8e519.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778157885/e470b7bb-2f7b-4947-857b-e01f81c8e519.png align="left")
 
 上下圖為兩種不同的算closeness分佈的方法，最右邊為node weight的等高線圖表，長的跟指紋87%像（？
 
@@ -100,11 +94,11 @@ c為一\[0,1\]的機率，在本文中設置0.5有最好的結果；W為column-n
 
 藉由這n個(n,1)向量，我們就可以知道任兩個node i, j間的結構關係強度，以[廣義的Jaccard係數](https://baike.baidu.com/item/Jaccard%E7%B3%BB%E6%95%B0)來衡量兩個指紋之間的相似性：
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778160321/3043e4fc-bb28-4f70-9448-49aae7f0b248.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778160321/3043e4fc-bb28-4f70-9448-49aae7f0b248.png align="left")
 
 接著我們就能把這個結構關係強度和content的similarity強度結合來計算attention score了，overview如下圖
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778163026/400259b0-2982-4134-b530-b963e07c7e4e.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778163026/400259b0-2982-4134-b530-b963e07c7e4e.png align="left")
 
 structural interaction即為上述的結構關係強度
 
@@ -114,7 +108,7 @@ structural interaction即為上述的結構關係強度
 
 用了三個citation network的dataset，來做semi-supervised的節點分類任務，dataset statistics如下：
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778164664/f1cfbafe-4686-4df8-922a-7fe81cd66730.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778164664/f1cfbafe-4686-4df8-922a-7fe81cd66730.png align="left")
 
 三個datasets其實格式差不多，以Cora數據為例可參考[這篇文章](https://blog.csdn.net/weixin_39373480/article/details/88742200)
 
@@ -124,17 +118,17 @@ structural interaction即為上述的結構關係強度
 
 > 實驗結果：
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778166087/42189232-0a16-44ad-a5a7-a959deefe891.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778166087/42189232-0a16-44ad-a5a7-a959deefe891.png align="left")
 
 提升了1–2%
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778170453/1044e293-e00f-44bf-b20a-57293b012163.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778170453/1044e293-e00f-44bf-b20a-57293b012163.png align="left")
 
 GAT的震盪較多
 
 > Ablation experiments
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778172195/c00df8a8-8e2e-4fb3-a255-e9b5ef1f570e.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778172195/c00df8a8-8e2e-4fb3-a255-e9b5ef1f570e.png align="left")
 
 上圖(a)為Cora dataset的結果，顯示2-hop的鄰居都會在message passing時以不同的attention score被聚合，相較GAT，引入high-order structural details對於over-smoothing的問題有一定的減緩
 
@@ -150,15 +144,21 @@ GAT的震盪較多
 
 優點：
 
-1.  The paper is easy to read
-2.  Introduce the combination of structural information to GAT
-3.  Have a few more parameters compared with GAT (for Cora dataset, about extra 0.03% parameters of GAT), but get 1~2% accuracy enhancement
+1. The paper is easy to read
+    
+2. Introduce the combination of structural information to GAT
+    
+3. Have a few more parameters compared with GAT (for the Cora dataset, about extra 0.03% parameters of GAT), but get 1~2% accuracy enhancement
+    
 
 缺點：
 
-1.  RWR其實已經是2004年的老方法了，其計算( I-cW)⁻¹的時間複雜度是O(n³) (by Gaussian elimination). The overall complexity is determined by the complexity of matrix inversion as matrix-vector multiplication has the space complexity O(n²)，因此導致本文提出的方法**很難用於large-scale real world dataset**，甚至GAT中的PPI inductive task也無法在時間內跑出10次平均的結果
-2.  不能調整聚合content資訊和結構資訊的比例，因為是train出來的，可解釋性比較低
-3.  Bad code readability，變數名稱命名的很差
+1. RWR其實已經是2004年的老方法了，其計算( I-cW)⁻¹的時間複雜度是O(n³) (by Gaussian elimination). The overall complexity is determined by the complexity of matrix inversion as matrix-vector multiplication has the space complexity O(n²)，因此導致本文提出的方法**很難用於large-scale real-world dataset**，甚至GAT中的PPI inductive task也無法在時間內跑出10次平均的結果
+    
+2. 不能調整聚合content資訊和結構資訊的比例，因為是train出來的，可解釋性比較低
+    
+3. Bad code readability，變數名稱命名的很差
+    
 
 > [ICLR official reviewer comment](https://openreview.net/forum?id=BJxWx0NYPr)
 
