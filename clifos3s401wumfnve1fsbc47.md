@@ -2,7 +2,7 @@
 title: "Interpretable Convolutional Neural Networks"
 datePublished: Sun Aug 02 2020 06:22:09 GMT+0000 (Coordinated Universal Time)
 cuid: clifos3s401wumfnve1fsbc47
-slug: cvpr2018-e58fafe8a7a3e9878be79a84cnn-spotlight-6a38361eece5
+slug: interpretable-convolutional-neural-networks
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685778140218/36a5c94c-cfd6-45dc-beaf-1825399c683c.png
 tags: ai, interpretation
 
