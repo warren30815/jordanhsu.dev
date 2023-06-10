@@ -1,15 +1,14 @@
 ---
-title: "GPT3 — 耗資1200萬美元訓練的通用NLP模型的商業價值"
+title: "Gpt3 — 耗資1200萬美元訓練的通用nlp模型的商業價值"
 datePublished: Wed Sep 16 2020 02:12:45 GMT+0000 (Coordinated Universal Time)
 cuid: clifong7g04lsyhnv6wg4dqv6
-slug: gpt3-e88097e8b3871200e890ace7be8ee58583e8a893e7b7b4e79a84e9809ae794a8nlpe6a8a1e59e8be79a84e59586e6a5ade583b9e580bc-aa525428a2ff
+slug: gpt3
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777922747/0c314690-4fa4-4473-b996-679b82aabd90.jpeg
+tags: gpt-3
 
 ---
 
 全文連結：[https://techcrunch.com/2020/08/28/what-does-gpt-3-mean-for-the-future-of-the-legal-profession/](https://techcrunch.com/2020/08/28/what-does-gpt-3-mean-for-the-future-of-the-legal-profession/)
-
-讀後心得 by 許竣翔 during internship in Avalanche Computing Taiwan
 
 > GPT-3, an one-fits-all NLP model without need of re-training
 
@@ -21,7 +20,7 @@ GPT-3 是一款OpenAI發布的通用自然語言處理模型，只需要在 GPT-
 
 能用更少的領域數據、**且不需經過**微調（**fine-tune）步驟去解決問題**
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685777919362/4bcb25a4-3b39-403e-a4b8-8c33a27ccd2c.jpeg)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685777919362/4bcb25a4-3b39-403e-a4b8-8c33a27ccd2c.jpeg align="left")
 
 這裡的Zero-shot（不給例子）、One-shot（只給一個例子）、Few-shot（只給少數例子）experimental setting都是完全不需要fine-tune的
 
@@ -42,9 +41,3 @@ GPT-3 是一款OpenAI發布的通用自然語言處理模型，只需要在 GPT-
 And that’s a wrap! Enjoy. 🎆
 
 👏
-
-More about Avalanche computing
-
-fb: [https://www.facebook.com/avalanchecomp/](https://www.facebook.com/avalanchecomp/)
-
-linkedin: [https://www.linkedin.com/company/avalanc/](https://www.linkedin.com/company/avalanc/)
