@@ -2,7 +2,7 @@
 title: "Key Opinion Leaders in Recommendation Systems: Opinion Elicitation and Diffusion"
 datePublished: Thu Feb 20 2020 00:58:53 GMT+0000 (Coordinated Universal Time)
 cuid: clifovv8w01xymfnv6xvqe7d5
-slug: key-opinion-leaders-in-recommendation-systems-opinion-elicitation-and-da8b741a2b30
+slug: key-opinion-leaders-in-recommendation-systems-opinion-elicitation-and-diffusion
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685778316065/43b839ed-f236-4084-a332-9ce1ec4fb82e.jpeg
 tags: neural-networks, graph, recommender-systems, kol
 
