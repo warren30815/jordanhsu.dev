@@ -1,5 +1,5 @@
 ---
-title: "探討graph attention機制有效性 — Understanding Attention and Generalization in Graph Neural Networks"
+title: "Understanding Attention and Generalization in Graph Neural Networks"
 datePublished: Mon Mar 09 2020 15:08:16 GMT+0000 (Coordinated Universal Time)
 cuid: clifouh3j01xdmfnv6x1i6s9k
 slug: understanding-attention-and-generalization-in-graph-neural-networks
