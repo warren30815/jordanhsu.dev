@@ -8,8 +8,6 @@ tags: ai, graph
 
 ---
 
-#### Self-Attention Graph Pooling
-
 paper link: [https://arxiv.org/abs/1904.08082](https://arxiv.org/abs/1904.08082)
 
 發表於 ICML 2019
