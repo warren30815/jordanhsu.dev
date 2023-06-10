@@ -2,7 +2,7 @@
 title: "Git全圖像化教學（with Gitkraken）"
 datePublished: Fri Jun 05 2020 03:19:16 GMT+0000 (Coordinated Universal Time)
 cuid: clifoo7ur01vtmfnv6rgo3obu
-slug: e5a682e4bd95e8ae93e4bda0e5afabe7a88be5bc8fe69588e78e87e68f90e9ab98e4b889e5808d-gite78988e69cace68ea7e588b6e585a8e59c96e5838fe58c96e69599e5adb8-with-gitkraken-705074ec0237
+slug: git-tutorial-with-gitkraken
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777959012/072b0f4e-ec24-41d5-b281-d71e946665fe.png
 tags: git
 
