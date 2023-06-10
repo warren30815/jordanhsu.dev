@@ -2,7 +2,7 @@
 title: "如何善用負債，讓銀行幫助你實現夢想 — 財商觀念與我在炒房手身上學到的事"
 datePublished: Sun Feb 12 2023 13:08:32 GMT+0000 (Coordinated Universal Time)
 cuid: clifoll2204kzyhnv6jechf8k
-slug: e5a682e4bd95e59684e794a8e8b2a0e582b5-e8ae93e98a80e8a18ce5b9abe58aa9e4bda0e5afa6e78fbee5a4a2e683b3-e8b2a1e59586e8a780e5bfb5e88887e68891e59ca8e78292e688bfe6898be8baabe4b88ae5adb8e588b0e79a84e4ba8b-492411323818
+slug: make-good-use-of-debt
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777835712/36c9fbe0-e1d5-45eb-9e63-cf6a3fc0b616.png
 
 ---
