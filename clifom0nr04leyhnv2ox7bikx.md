@@ -4,6 +4,7 @@ datePublished: Fri Feb 10 2023 15:51:28 GMT+0000 (Coordinated Universal Time)
 cuid: clifom0nr04leyhnv2ox7bikx
 slug: frontend-system-design-facebook-feed-1
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777856188/7ca14a41-ecce-46b9-a09a-6f8ba87507f4.png
+tags: frontend-development, system-design
 
 ---
 
