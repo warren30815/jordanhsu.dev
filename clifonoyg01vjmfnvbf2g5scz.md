@@ -2,20 +2,19 @@
 title: "2020 - API-powered startups快速成長的一年"
 datePublished: Tue Sep 15 2020 02:19:12 GMT+0000 (Coordinated Universal Time)
 cuid: clifonoyg01vjmfnvbf2g5scz
-slug: 2020-api-powered-startupse5bfabe9809fe68890e995b7e79a84e4b880e5b9b4-5304a501fa9
+slug: api-powered-startups
 cover: https://cdn-images-1.medium.com/max/800/1*Cv7TneB_5VzV-lapBUd-LA.jpeg
+tags: apis
 
 ---
 
 全文連結：[https://techcrunch.com/2020/09/10/whats-driving-api-powered-startups-forward-in-2020/](https://techcrunch.com/2020/09/10/whats-driving-api-powered-startups-forward-in-2020/)
 
-讀後心得 by 許竣翔 during internship in Avalanche Computing Taiwan
-
 **What is API ?**
 
-<iframe src="https://www.youtube.com/embed/zvKadd9Cflc?feature=oembed" width="700" height="393" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://www.youtube.com/embed/zvKadd9Cflc?feature=oembed" width="700" height="393"></iframe>
 
-**Why API ?**
+**Why API?**
 
 > Don’t reinvent the wheel, land yourself among something more challenging and fun
 
@@ -28,9 +27,3 @@ cover: https://cdn-images-1.medium.com/max/800/1*Cv7TneB_5VzV-lapBUd-LA.jpeg
 And that’s a wrap! Enjoy. 🎆
 
 👏
-
-More about Avalanche computing
-
-fb: [https://www.facebook.com/avalanchecomp/](https://www.facebook.com/avalanchecomp/)
-
-linkedin: [https://www.linkedin.com/company/avalanc/](https://www.linkedin.com/company/avalanc/)
