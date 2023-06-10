@@ -2,14 +2,13 @@
 title: "AI-powered聊天機器人的商業戰略地位"
 datePublished: Tue Sep 15 2020 03:17:00 GMT+0000 (Coordinated Universal Time)
 cuid: clifonkf704lvyhnv1cxc7p8p
-slug: ai-powerede8818ae5a4a9e6a99fe599a8e4babae79a84e59586e6a5ade688b0e795a5e59cb0e4bd8d-1782605db199
+slug: ai-powered-chatbot
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777928504/d355de12-f1d6-4139-8bdc-241fbd94d145.jpeg
+tags: ai, chatbot
 
 ---
 
 全文連結：[https://techcrunch.com/2020/09/04/brands-that-hyper-personalize-will-win-the-next-decade/](https://techcrunch.com/2020/09/04/brands-that-hyper-personalize-will-win-the-next-decade/)
-
-讀後心得 by 許竣翔 during internship in Avalanche Computing Taiwan
 
 > “always-on and empathetic” communication robots shift from nice-to-have to a prerequisite for growth.
 
@@ -22,9 +21,3 @@ cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777928504/d355de1
 And that’s a wrap! Enjoy. 🎆
 
 👏
-
-More about Avalanche Computing, Please refer to
-
-fb: [https://www.facebook.com/avalanchecomp/](https://www.facebook.com/avalanchecomp/)
-
-linkedin: [https://www.linkedin.com/company/avalanc/](https://www.linkedin.com/company/avalanc/)
