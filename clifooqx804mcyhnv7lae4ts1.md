@@ -2,8 +2,9 @@
 title: "基礎生醫影像分割 — CT scan"
 datePublished: Mon Mar 23 2020 09:41:27 GMT+0000 (Coordinated Universal Time)
 cuid: clifooqx804mcyhnv7lae4ts1
-slug: e59fbae7a48ee7949fe986abe5bdb1e5838fe58886e589b2-ct-scan-c930d5a85ac1
+slug: ct-scan
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777982729/1456f5d9-615b-42de-8609-f14019370ad9.png
+tags: image-processing, computed-tomography
 
 ---
 
