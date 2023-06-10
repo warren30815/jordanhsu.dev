@@ -2,8 +2,9 @@
 title: "五分鐘學前端系統設計面試（六）- 來做 Facebook 貼文串的前端吧！下"
 datePublished: Tue Feb 28 2023 02:28:32 GMT+0000 (Coordinated Universal Time)
 cuid: clifopkrm01w8mfnvcmql9dkt
-slug: e4ba94e58886e99098e5adb8e5898de7abafe7b3bbe7b5b1e8a8ade8a888e99da2e8a9a6-e585ad-e4be86e5819a-facebook-e8b2bce69687e4b8b2e79a84e5898de7abafe590a7-e4b88b-50352c264cae
+slug: frontend-system-design-facebook-feed-6
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685778022449/52f745a0-4165-42bc-a16c-519830bfa86e.png
+tags: frontend-development, system-design
 
 ---
 
@@ -43,9 +44,11 @@ dimensions
 
 最簡單的方式，直接存要渲染的 HTML
 
-&lt;a href="..."&gt;#AboutLastNight&lt;/a&gt; is here... and ready to change the meaning of date night...
+```xml
+<a href="...">#AboutLastNight</a> is here... and ready to change the meaning of date night...
 
-Absolute comedy 🤣 Dropping 2/10 on &lt;a href="..."&gt;HBO Max&lt;/a&gt;!
+Absolute comedy 🤣 Dropping 2/10 on <a href="...">HBO Max</a>!
+```
 
 但也是最不好的方式，因為很容易導致 XSS 攻擊，而且後續要加 style 會很難加，以及儲存的 HTML 無法用於非 web 的客戶端（e.g. iOS / Android）
 
@@ -59,27 +62,29 @@ Absolute comedy 🤣 Dropping 2/10 on &lt;a href="..."&gt;HBO Max&lt;/a&gt;!
 
 Draft.js 是 Facebook 開發的用來讀寫富文本的編輯器，範例如下：
 
-{  
-content: \[  
-{  
-type: 'HASHTAG',  
-content: '#AboutLastNight',  
-},  
-{  
-type: 'TEXT',  
-content: ' is here... and ready to change ... Dropping 2/10 on ',  
-},  
-{  
-type: 'MENTION',  
-content: 'HBO Max',  
-entityID: 1234,  
-},  
-{  
-type: 'TEXT',  
-content: '!',  
-},  
-\];  
+```json
+{
+    content: [
+        {
+            type: 'HASHTAG',
+            content: '#AboutLastNight',
+        },
+        {
+            type: 'TEXT',
+            content: ' is here... and ready to change ... Dropping 2/10 on ',
+        },
+        {
+            type: 'MENTION',
+            content: 'HBO Max',
+            entityID: 1234,
+        },
+        {
+            type: 'TEXT',
+            content: '!',
+        },
+    ];
 }
+```
 
 可以看出編輯器將上述例子表示成抽象語法樹（Abstract Syntax Tree），可以被序列化成 JSON 字串儲存，這種方式可以不用寫客製化的解析程式，且易於擴展新種類的富文本，而缺點是這種格式通常相對上面的客製語法方式有著更長的字串，因此需要更高的網路傳輸、硬碟儲存空間成本
 
@@ -135,14 +140,16 @@ Facebook 利用 AI 來辨識圖片並產生圖片描述，用來作為`alt` 中�
 * 使用`Intl.DateTimeFormat()` API 來轉換原始的 Unix timestamp 為對應的時區
     
 
-const date = new Date(Date.UTC(2021, 11, 20, 3, 23, 16, 738)); // 第二個月份的數值範圍為 0 ~ 11  
-console.log(  
-new Intl.DateTimeFormat('zh-CN', {  
-dateStyle: 'full',  
-timeStyle: 'long',  
-}).format(date),  
-);  
+```javascript
+const date = new Date(Date.UTC(2021, 11, 20, 3, 23, 16, 738)); // 第二個月份的數值範圍為 0 ~ 11
+console.log(
+    new Intl.DateTimeFormat('zh-CN', {
+        dateStyle: 'full',
+        timeStyle: 'long',
+    }).format(date),
+);
 // 2021年12月20日星期一 GMT+8 11:23:16
+```
 
 #### 相對的時間戳記會過期[​](https://www.greatfrontend.com/questions/system-design/news-feed-facebook#relative-timestamps-can-become-stale)
 
@@ -211,7 +218,5 @@ Facebook 上的使用者可以將滑鼠 hover 在 “喜歡” 按鈕上來獲�
 ### 結語
 
 系列文四五六利用 RADIO Framework 來探討實作一個 Facebook 貼文串的架構與要注意的細節和優化
-
-下篇我們將開始介紹如何設計一個 autocomplete 的 UI 元件
 
 And that’s a wrap! Enjoy. 🎆
