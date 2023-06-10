@@ -1,13 +1,12 @@
 ---
-title: "CVPR2018 — 可解釋的CNN（spotlight）"
+title: "Interpretable Convolutional Neural Networks"
 datePublished: Sun Aug 02 2020 06:22:09 GMT+0000 (Coordinated Universal Time)
 cuid: clifos3s401wumfnve1fsbc47
 slug: cvpr2018-e58fafe8a7a3e9878be79a84cnn-spotlight-6a38361eece5
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685778140218/36a5c94c-cfd6-45dc-beaf-1825399c683c.png
+tags: ai, interpretation
 
 ---
-
-#### Interpretable Convolutional Neural Networks
 
 paper link: [https://openreview.net/pdf?id=BJxWx0NYPr](https://openaccess.thecvf.com/content_cvpr_2018/papers/Zhang_Interpretable_Convolutional_Neural_CVPR_2018_paper.pdf)
 
@@ -27,13 +26,13 @@ Spotlight in CVPR 2018
 
 ### Know how
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778122958/76ae11b6-1c3c-40b4-afac-e5adc0480745.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778122958/76ae11b6-1c3c-40b4-afac-e5adc0480745.png align="left")
 
 上圖是傳統CNN與這篇的CNN的差別，這篇其實就是把Conv layer的loss部分做改良，除了原任務的loss（例如cross-entropy）外，額外加上一個mutual information的loss（接下來會解釋），所以上右圖的綠色部分不是額外加了什麼layer，只是作者的畫圖表達方式不同而已
 
 除了上述loss外，還有額外加了一個mask，主要概念是抑制分散的activation（如下圖），讓feature map能focus在某一區塊（object-part）
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778124863/bc290d89-207f-473d-9c6c-b3231a741a58.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778124863/bc290d89-207f-473d-9c6c-b3231a741a58.png align="left")
 
 我們無法確保傳統的CNN會學到什麼，因此他的檢測結果很容易受到dataset的不同而影響performance
 
@@ -46,21 +45,21 @@ Spotlight in CVPR 2018
 
 要回答第二個問題，首先我們先介紹paper中如何定義mask的，假設一張輸入圖片經過conv和relu後得到feature map（下稱為x）的shape是3\*3，那我們就會有3\*3張masks（對應每個x的pixel），每張mask的shape也都是3\*3，如下圖，每張mask的能量分別會以一個點為中心像四周衰減（L1-norm）
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778126472/94814752-670f-49f0-ac51-22ff76e845e0.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778126472/94814752-670f-49f0-ac51-22ff76e845e0.png align="left")
 
 paper中的做法是會去看x的pixel值在哪個座標最大（relu後的值最大，有一點pooling的味道），就去用哪張mask做x ◦ mask，用意是確保x只會激活某個region，以此來filter out noisy activation，可以把以上概念想成我今天要檢測貓，然後filter可能會同時用部分貓腳、貓耳朵、貓臉來聯合檢測，但我希望一個filter只要foucs在一個object-part就好，所以會用mask的方式只留下x上最明顯的區域（下圖）
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778128867/6b362860-8b94-4790-ac9a-b594fa4fabde.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778128867/6b362860-8b94-4790-ac9a-b594fa4fabde.png align="left")
 
 而如何”留下預測所需的關鍵資訊”呢，filter的優化目標除了原任務的loss外，加上了針對不同的x，我們如何選擇一個合適的mask，paper中的做法是最大化所有x（下稱X）與所有masks（下稱T）之間的mutual information，代表當我今天拿到一個x，我能最大程度的降低要選擇哪個mask的不確定性（i.e. 如果我選擇每個mask的機率是一樣的，那我等於不知道哪個mask對x合適，所以我的目標是要確定選某一個mask，這樣我的不確定性就是0），上述formulate成數學式的話，如下圖：
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778130434/3351b751-bd5a-4256-8566-dd8bc7c22f3e.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778130434/3351b751-bd5a-4256-8566-dd8bc7c22f3e.png align="left")
 
 最後一項為原任務loss
 
 其中
 
-![](https://cdn-images-1.medium.com/max/800/1*Tg4DE1KazGC0MgutwYoGOA.png)
+![](https://cdn-images-1.medium.com/max/800/1*Tg4DE1KazGC0MgutwYoGOA.png align="left")
 
 目標：最大化mutual information（MI），因此loss function前面有負號
 
@@ -68,13 +67,13 @@ paper中的做法是會去看x的pixel值在哪個座標最大（relu後的值�
 
 最後回答第三個問題：為什麼能讓filter們各司其職。還記得剛提到我們希望每個filter只負責一個object-part嗎（例如當鳥頭出現時，對應的filter會做事，即根據其x最大的pixel值的座標，從T裡（更精確來說，是T+）挑一個對應位置的mask指定給它；不相關的filter就保持安靜，即指定給它一個全黑的mask，下稱T-），首先，我們需要在training process determines the target category for each filter，paper中是依據filter對於某類型image set得到的x的pixel值平均後來決定filter對哪個類別特別有興趣，就讓該filter負責該類型圖片的檢測（如下圖）
 
-![](https://cdn-images-1.medium.com/max/800/1*00oIBt23tz5JxiGl5I4j7w.png)
+![](https://cdn-images-1.medium.com/max/800/1*00oIBt23tz5JxiGl5I4j7w.png align="left")
 
 c為圖片類別，例如狗、貓之類的
 
 定義好filter的類別後，我們來改寫一下上面提到的MI（數學推導見\[3\]）
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778137219/dfd90bf0-8259-40d9-9a1b-8844f483e032.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1685778137219/dfd90bf0-8259-40d9-9a1b-8844f483e032.png align="left")
 
 紅框部分為常數，代表prior entropy of masks   
 藍框部分目標為Low inter-category entropy，T’ ∈ {T-,T+}，When we know x, we need to assure T- or T+ (category c or not) to minimize the conditional entropy  
@@ -88,16 +87,23 @@ paper寫得很清楚了，懶人包的話可以直接參考我的報告ppt \[4\]
 
 ### Conclusion
 
-*   Proposed a general and unsupervised method to disentangle high conv-layer to enhance their interpretability
-*   Each filter is more semantically meaningful than traditional CNN
-*   CNN’s classification accuracy may decrease a bit.
+* Proposed a general and unsupervised method to disentangle high conv-layer to enhance their interpretability
+    
+* Each filter is more semantically meaningful than traditional CNN
+    
+* CNN’s classification accuracy may decrease a bit.
+    
 
 ### My rethink
 
-*   One filter is encoded to only one object-part. It sounds low flexible.
-*   Disentangled high conv-layer filter to focus one object-part, making it hard to catch some common senses between objects.
-*   The way to decide filter class and selected mask seems to be naive.
-*   I speculate the design may make the model easier to know what it doesn’t know.
+* One filter is encoded to only one object part. It sounds low flexible.
+    
+* Disentangled high conv-layer filter to focus one object-part, making it hard to catch some common senses between objects.
+    
+* The way to decide on filter class and selected mask seem to be naive.
+    
+* I speculate the design may make the model easier to know what it doesn’t know.
+    
 
 And that’s a wrap! Enjoy. 🎆
 
