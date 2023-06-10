@@ -1,9 +1,10 @@
 ---
-title: "ICLR 2019 best paper 關鍵方法理解— THE LOTTERY TICKET HYPOTHESIS: FINDING SPARSE, TRAINABLE NEURAL…"
+title: "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks"
 datePublished: Tue Mar 10 2020 16:16:10 GMT+0000 (Coordinated Universal Time)
 cuid: clifop0ub04mhyhnv94vx8q29
-slug: iclr-2019-best-paper-e9979ce98db5e696b9e6b395e79086e8a7a3-the-lottery-ticket-hypothesis-finding-sparse-trainable-neural-9e2fafa19290
+slug: the-lottery-ticket-hypothesis-finding-sparse-trainable-neural-networks
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777996120/9cd182ff-72e9-4904-bfa8-1be7b3d218ae.jpeg
+tags: ai, model-compression
 
 ---
 
