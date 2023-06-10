@@ -2,16 +2,15 @@
 title: "No Code — 不用寫程式就能打造自己的網站、app與其商業價值"
 datePublished: Fri Sep 18 2020 04:22:22 GMT+0000 (Coordinated Universal Time)
 cuid: clifonuae01vmmfnvclns8bes
-slug: no-code-e4b88de794a8e5afabe7a88be5bc8fe5b0b1e883bde68993e980a0e887aae5b7b1e79a84e7b6b2e7ab99-appe88887e585b6e59586e6a5ade583b9e580bc-ee96c6427dd9
+slug: no-code
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685777941309/370f5c06-6c8c-42bb-9842-2604abbccaf5.png
+tags: no-code
 
 ---
 
-Written by 許竣翔 during internship in Avalanche Computing Taiwan
-
 Image source: [https://research.aimultiple.com/no-code-rpa/](https://research.aimultiple.com/no-code-rpa/)
 
-> Construct your own application with just drag and drop
+> Construct your application with just drag and drop
 
 **What is “No code”?**
 
@@ -19,10 +18,12 @@ Image source: [https://research.aimultiple.com/no-code-rpa/](https://research.ai
 
 和 No Code 類似的另一個名詞是「Low Code」— 只要寫少量的程式，就可以達到傳統要寫一堆程式才能做到的事情。\[1\]
 
-**What “No code” or “Low code” tools mean for startup?**
+**What do “No code” or “Low code” tools mean for startups?**
 
-1.  開發起來快很多，而且能減緩對工程師的需求
-2.  維護成本低。依據筆者自身在computer science領域的開發經驗，code 寫出來之後，不可能寫出來百分之百完美不會改，經驗不足的情況下，花一小時寫的 code ，之後整合其他功能的時候觸發隱藏bug，維護的時間可能是一個工作天（而這也是senior和junior engineer為什麼薪水可以差到一倍以上的其中原因），這種事情已經見怪不怪了
+1. 開發起來快很多，而且能減緩對工程師的需求
+    
+2. 維護成本低。依據筆者自身在computer science領域的開發經驗，code 寫出來之後，不可能寫出來百分之百完美不會改，經驗不足的情況下，花一小時寫的 code ，之後整合其他功能的時候觸發隱藏bug，維護的時間可能是一個工作天（而這也是senior和junior engineer為什麼薪水可以差到一倍以上的其中原因），這種事情已經見怪不怪了
+    
 
 **Why not all companies just use “No code” or “Low code” tools?**
 
@@ -37,9 +38,3 @@ Image source: [https://research.aimultiple.com/no-code-rpa/](https://research.ai
 And that’s a wrap! Enjoy. 🎆
 
 👏
-
-More about Avalanche Computing (the Hyper-Scale Computing technique provider for the AI industry).
-
-fb: [https://www.facebook.com/avalanchecomp/](https://www.facebook.com/avalanchecomp/)
-
-linkedin: [https://www.linkedin.com/company/avalanc/](https://www.linkedin.com/company/avalanc/)
