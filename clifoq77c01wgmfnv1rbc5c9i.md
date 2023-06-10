@@ -2,7 +2,7 @@
 title: "五分鐘學前端系統設計面試（三）- RADIO Framework 下"
 datePublished: Sat Feb 11 2023 05:45:30 GMT+0000 (Coordinated Universal Time)
 cuid: clifoq77c01wgmfnv1rbc5c9i
-slug: e4ba94e58886e99098e5adb8e5898de7abafe7b3bbe7b5b1e8a8ade8a888e99da2e8a9a6-e4b889-radio-framework-e4b88b-c3ec2ff0ca64
+slug: frontend-system-design-facebook-feed-3
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685778051245/da372604-af2b-4ca2-958a-4555a2e2c9d8.png
 tags: frontend-development, system-design
 
@@ -49,36 +49,41 @@ tags: frontend-development, system-design
 
 貼文是一個分頁列表，所以 API 的輸入需要分頁相關資訊，如 size 代表要請求 10 則新貼文，cursor 代表當前最後一筆資料在資料庫內的標記（pointer，可以簡單理解為 id 的概念）
 
-{  
-"size": 10,  
-"cursor": "=dXNlcjpXMDdRQ1JQQTQ"  
+```json
+{
+    "size": 10,
+    "cursor": "=dXNlcjpXMDdRQ1JQQTQ"
 }
+```
 
 **Output**
 
-{  
-"pagination": {  
-"size": 10,  
-"next\_cursor": "=dXNlcjpVMEc5V0ZYTlo"  
-},  
-"results": \[  
-{  
-"id": "123",  
-"author": {  
-"id": "456",  
-"name": "John Doe"  
-},  
-"content": "Hello world",  
-"image": "https://www.example.com/feed-images.jpg",  
-"reactions": {  
-"likes": 20,  
-"haha": 15  
-},  
-"created\_time": 1620639583  
-}  
-// ... More posts.  
-\]  
+```json
+
+{
+    "pagination": {
+        "size": 10,
+            "next_cursor": "=dXNlcjpVMEc5V0ZYTlo"
+    },
+    "results": [
+        {
+            "id": "123",
+            "author": {
+                "id": "456",
+                "name": "John Doe"
+            },
+            "content": "Hello world",
+            "image": "https://www.example.com/feed-images.jpg",
+            "reactions": {
+                "likes": 20,
+                "haha": 15
+            },
+            "created_time": 1620639583
+        }
+        // ... More posts.
+    ]
 }
+```
 
 ***Client-Client API Example***
 
